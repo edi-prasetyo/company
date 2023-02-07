@@ -19,6 +19,29 @@ class Company_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function get_allcompany()
+    {
+        $this->db->select('*');
+        $this->db->from('companies');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function send_success()
+    {
+        $this->db->select('*');
+        $this->db->from('companies');
+        $this->db->where('send', 1);
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function send_failed()
+    {
+        $this->db->select('*');
+        $this->db->from('companies');
+        $this->db->where('send', 2);
+        $query = $this->db->get();
+        return $query->result();
+    }
     //Total Row
     public function total_row()
     {

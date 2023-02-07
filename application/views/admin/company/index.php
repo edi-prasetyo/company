@@ -75,7 +75,7 @@ $meta = $this->meta_model->get_meta();
                     <th>User input</th>
                     <th>email</th>
                     <th>status</th>
-                    <th width="15%">Action</th>
+                    <th width="20%">Action</th>
                 </tr>
             </thead>
             <?php $no = 1;
