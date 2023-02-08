@@ -71,6 +71,7 @@ $meta = $this->meta_model->get_meta();
             <thead class="thead-light">
                 <tr>
                     <th>No</th>
+                    <th>Date</th>
                     <th>Nama Perusahaan</th>
                     <th>User input</th>
                     <th>email</th>
@@ -82,6 +83,7 @@ $meta = $this->meta_model->get_meta();
             foreach ($companies as $data) { ?>
                 <tr>
                     <td><?php echo $no; ?></td>
+                    <td><?php echo date('d-m-Y', strtotime($data->created_at)); ?></td>
                     <td><?php echo $data->name; ?></td>
                     <td><?php echo $data->user_name; ?></td>
                     <td><a href="mailto:<?php echo $data->email; ?>"><?php echo $data->email; ?></a></td>
@@ -101,6 +103,7 @@ $meta = $this->meta_model->get_meta();
                             <a href="<?php echo base_url('admin/company/send_failed/' . $data->id); ?>" class="btn btn-danger btn-sm"> <i class="fa fa-times"></i> Gagal</a>
                             <a href="<?php echo base_url('admin/company/send_success/' . $data->id); ?>" class="btn btn-success btn-sm"> <i class="fa fa-paper-plane"></i> Terkirim</a>
                         <?php endif; ?>
+                        <a href="<?php echo base_url('admin/company/detail/' . $data->id); ?>" class="btn btn-primary btn-sm">Detail</a>
                     </td>
                 </tr>
 
