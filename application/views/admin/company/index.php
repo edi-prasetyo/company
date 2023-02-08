@@ -83,7 +83,7 @@ $meta = $this->meta_model->get_meta();
             foreach ($companies as $data) { ?>
                 <tr>
                     <td><?php echo $no; ?></td>
-                    <td><?php echo date('d-m-Y', strtotime($data->created_at)); ?></td>
+                    <td><?php echo date('d-m-Y', strtotime($data->created_at)); ?> - <?php echo date('H:i:s', strtotime($data->created_at)); ?></td>
                     <td><?php echo $data->name; ?></td>
                     <td><?php echo $data->user_name; ?></td>
                     <td><a href="mailto:<?php echo $data->email; ?>"><?php echo $data->email; ?></a></td>
@@ -96,7 +96,6 @@ $meta = $this->meta_model->get_meta();
                             <span class="badge badge-danger">Gagal</span>
                         <?php endif; ?>
                     </td>
-
                     <td>
                         <?php if ($user->role_id == 1 || $user->role_id == 3) : ?>
                         <?php else : ?>
