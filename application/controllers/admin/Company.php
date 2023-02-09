@@ -117,7 +117,7 @@ class Company extends CI_Controller
     {
         $company = $this->company_model->detail($id);
         $data = [
-            'title'                 => 'Detail Main Agen',
+            'title'                 => 'Detail Perusahaan',
             'company'             => $company,
             'content'               => 'admin/company/detail'
         ];

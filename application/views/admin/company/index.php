@@ -105,7 +105,6 @@ $meta = $this->meta_model->get_meta();
                         <a href="<?php echo base_url('admin/company/detail/' . $data->id); ?>" class="btn btn-primary btn-sm">Detail</a>
                     </td>
                 </tr>
-
             <?php $no++;
             }; ?>
         </table>

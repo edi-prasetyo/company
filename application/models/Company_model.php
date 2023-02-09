@@ -57,9 +57,11 @@ class Company_model extends CI_Model
     }
     public function detail($id)
     {
-        $this->db->select('*');
+        $this->db->select('companies.*, provinces.name as province_name, cities.name as city_name');
         $this->db->from('companies');
-        $this->db->where('id', $id);
+        $this->db->join('provinces', 'provinces.id = companies.province_id', 'LEFT');
+        $this->db->join('cities', 'cities.id = companies.city_id', 'LEFT');
+        $this->db->where('companies.id', $id);
         $query = $this->db->get();
         return $query->row();
     }
